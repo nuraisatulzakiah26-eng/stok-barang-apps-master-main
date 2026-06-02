@@ -1,7 +1,7 @@
 <nav class="navbar-vertical navbar">
     <div class="nav-scroller">
         <a class="navbar-brand fw-bold text-white fs-3" href="#">
-            PKS-Inventory
+            PKSD-Inventory
         </a>
         
         <ul class="navbar-nav flex-column" id="sideNavbar">
