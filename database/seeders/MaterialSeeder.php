@@ -13,42 +13,29 @@ class MaterialSeeder extends Seeder
      */
     public function run(): void
     {
-    DB::table('materials')->insert([
-        // 1. Material Pokok / Utama
-            [
-                'kode_material' => 'MT-001',
-                'nama_material' => 'Kayu Jati Perhutani',
-                'jenis_material' => 'Pokok',
-                'size' => 1.0,
-                'satuan' => 'M',
-                'stok_minimum' => 10,
-                'stok_sekarang' => 5, // Sengaja di bawah minimum untuk test notifikasi
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'kode_material' => 'MT-002',
-                'nama_material' => 'Kayu Bengkirai',
-                'jenis_material' => 'Pokok',
-                'size' => 1.0,
-                'satuan' => 'M',
-                'stok_minimum' => 10,
-                'stok_sekarang' => 15, // Stok aman
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            // 2. Material Pembantu
-            [
-                'kode_material' => 'MT-003',
-                'nama_material' => 'Lem',
-                'jenis_material' => 'Pembantu',
-                'size' => 2.0,
-                'satuan' => 'Kg',
-                'stok_minimum' => 100,
-                'stok_sekarang' => 45, // Sengaja di bawah minimum untuk test notifikasi
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ]);
+   DB::table('materials')->insert([
+    [
+        'kode_material' => 'MT-001',
+        'nama_material' => 'Kayu Jati Papan',
+        'jenis_material' => 'Pokok',
+        'tebal' => 5.00,      // Ada tebal (cm)
+        'panjang' => 4.00,    // Ada panjang (m)
+        'lebar' => 20.00,    // Ada lebar (cm)
+        'satuan' => 'Pcs',
+        'stok_sekarang' => 10,
+        'stok_minimum' => 5,
+    ],
+    [
+        'kode_material' => 'MT-002',
+        'nama_material' => 'Lem Fox Kuning',
+        'jenis_material' => 'Pembantu',
+        'tebal' => null,      // Kosongkan karena bukan kayu
+        'panjang' => null,  // Kosongkan karena bukan kayu
+        'lebar' => null,     
+        'satuan' => 'Kg',
+        'stok_sekarang' => 20,
+        'stok_minimum' => 5,
+    ]
+]);
     }
 }

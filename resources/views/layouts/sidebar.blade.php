@@ -33,6 +33,20 @@
             </li>
 
             <li class="nav-item">
+                <div class="navbar-heading">Data Master</div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('material.category') }}">
+                    <i class="nav-icon icon-xs me-2">🏷️</i> Kategori Material
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('material.supplier') }}">
+                    <i class="nav-icon icon-xs me-2">📦</i> Supplier
+                </a>
+            </li>
+            <li class="nav-item">
+
                 <div class="navbar-heading">Aktivitas Gudang</div>
             </li>
 

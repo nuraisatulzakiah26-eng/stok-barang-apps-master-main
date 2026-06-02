@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BarangController extends Controller
 {
@@ -12,7 +13,14 @@ class BarangController extends Controller
      */
     public function index()
     {
-        //
+       $materials = DB::table('materials')->get();
+    return view('admin.material.pokok', compact('materials'));
+    }
+
+    public function pokok()
+    {
+       $materials = DB::table('materials')->where('jenis_material', 'Pokok')->get();   
+    return view('admin.material.pokok', compact('materials'));
     }
 
     /**
@@ -20,7 +28,9 @@ class BarangController extends Controller
      */
     public function create()
     {
-        //
+        $categories = DB::table('categories')->get();
+        return view('admin.material.pokok_create', compact('categories'));
+
     }
 
     /**
@@ -28,7 +38,23 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_material' => 'required|string|max:255',
+            'jenis_material' => 'required|string|max:255',
+            'stok_sekarang' => 'required|integer',
+            'stok_minimum' => 'required|integer',
+        ]);
+
+        DB::table('materials')->insert([
+            'nama_material' => $request->nama_material,
+            'jenis_material' => $request->jenis_material,
+            'stok_sekarang' => $request->stok_sekarang,
+            'stok_minimum' => $request->stok_minimum,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        return redirect()->route('material.pokok')->with('success', 'Material berhasil ditambahkan.');
     }
 
     /**

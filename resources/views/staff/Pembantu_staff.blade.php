@@ -3,12 +3,6 @@
 @section('title', 'Daftar Material') {{-- Ini mengisi @yield('title') di induk --}}
 
 @section('content')
-    {{-- Copy-paste kode tabel Bootstrap yang tadi di sini --}}
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold">Master Bahan Baku</h2>
-       <a href="{{ route('material.pokok.create') }}" class="btn btn-primary">+ Tambah Material</a>
-    </div>
-
     <div class="card shadow-sm border-0">
         <div class="card-body p-0">
             <div class="table-responsive">
@@ -18,28 +12,22 @@
                         <tr>
                             <th class="ps-4">No</th>
                             <th>Nama Bahan Baku</th>
+                            <th>Size</th>
                             <th>Satuan</th>
-                              <th>Tebal (cm)</th>
-                            <th>Panjang (m)</th>
-                            <th>Lebar (cm)</th> 
                             <th>Stok Minimum</th>
                             <th class="text-center">Aksi</th>
                         </tr>
+                    </thead>
                     <tbody>
-    @foreach($materials as $item)
-    <tr>
-        <td>{{ $loop->iteration }}</td>
-        <td>{{ $item->nama_material }}</td>
-        <td>{{ $item->satuan }}</td>
-        <td>{{ $item->tebal ?? '-' }}</td> 
-        <td>{{ $item->panjang ?? '-' }}</td>
-        <td>{{ $item->lebar ?? '-' }}</td>
-        <td>{{ $item->stok_minimum }}</td>
-        <td>
-            </td>
-    </tr>
-    @endforeach
-</tbody>
+                        {{-- Contoh isian dari data dummy kamu (Jati) --}}
+                        <tr>
+                            <td class="ps-4">1</td>
+                            <td>Lem</td>
+                            <td>1</td>
+                            <td>M</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
