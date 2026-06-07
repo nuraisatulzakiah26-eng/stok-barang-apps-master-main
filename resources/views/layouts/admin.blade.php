@@ -22,7 +22,7 @@
         <div id="page-content">
             <nav class="navbar navbar-expand-lg navbar-white bg-white px-4 py-2 border-bottom shadow-sm">
                 <div class="container-fluid">
-                    <span class="navbar-brand fw-bold text-primary mb-0 h1 fs-4">PSK-Inventory</span>
+                    <span class="navbar-brand fw-bold text-primary mb-0 h1 fs-4">PKSD-Inventory</span>
                     
                     <div class="ms-auto d-flex align-items-center">
                         <ul class="navbar-nav mb-0">

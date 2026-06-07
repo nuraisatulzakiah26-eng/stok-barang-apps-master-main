@@ -15,7 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('nama_supplier');
             $table->string('alamat');
-            $table->string('no_telepon');
+            $table->string('telepon'); 
+            $table->string('email')->nullable();
+            
+            // Kategori material diletakkan di bagian akhir
+            $table->enum('kategori_material', ['Material Pokok', 'Material Pembantu', 'Semua'])->default('Semua');
+            
             $table->timestamps();
         });
     }

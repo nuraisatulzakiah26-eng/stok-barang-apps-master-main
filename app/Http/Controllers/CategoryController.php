@@ -54,5 +54,5 @@ class CategoryController extends Controller
             return redirect()->route('material.category')->with('success', 'Kategori berhasil diperbarui.');
         }
 
-        
-}h
+       
+}
